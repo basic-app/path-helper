@@ -9,7 +9,7 @@ namespace BasicApp\PathHelper;
 class PathHelper
 {
 
-    function normalize(string $path)
+    public static function normalize(string $path)
     {
         $path = str_replace('\\', '/', $path);
         
@@ -52,27 +52,27 @@ class PathHelper
         return implode(DIRECTORY_SEPARATOR, $result);
     }
 
-    public function root(string $path) : string
+    public static function root(string $path) : string
     {
         return static::normalize(ROOTPATH . $path);
     }
 
-    public function app(string $path) : string
+    public static function app(string $path) : string
     {
         return static::normalize(APPPATH . $path);
     }
 
-    public function system(string $path) : string
+    public static function system(string $path) : string
     {
         return static::normalize(SYSTEMPATH . $path);
     }
 
-    public function fc(string $path) : string
+    public static function fc(string $path) : string
     {
         return static::normalize(FCPATH . $path);
     }
 
-    public function write(string $path) : string
+    public static function write(string $path) : string
     {
         return static::normalize(WRITEPATH . $path);
     }
