@@ -17,7 +17,7 @@ class PathHelper
         
         $result = array();
 
-        while(list($k, $segment) = each($segments))
+        foreach($segments as $k => $segment)
         {
             switch($segment)
             {
@@ -43,7 +43,7 @@ class PathHelper
                 
                 default:
                 
-                    $result[] = $block;
+                    $result[] = $segment;
                 
                 break;
             }
